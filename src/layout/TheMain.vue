@@ -7,7 +7,23 @@ import {RouterLink, RouterView} from 'vue-router'   // vueRouter - 페이지 이
 
 <template>
   <v-main>
-    <v-container>
+    <v-container
+        fluid
+        class="mt-8"
+    >
+      <v-expansion-panels variant="inset">
+        <v-expansion-panel
+            v-for="i in 3"
+            :key="i"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            title="배치"
+
+        >
+        </v-expansion-panel>
+
+      </v-expansion-panels>
+
+
       <v-row no-gutters>
         <v-col
             v-for="n in 3"
