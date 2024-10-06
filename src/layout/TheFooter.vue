@@ -6,7 +6,7 @@
 <template>
   <v-footer
       app
-      elevation="1"
+      elevation="2"
       class="justify-center text-body-2 font-weight-bold"
   >
     <v-sheet>
