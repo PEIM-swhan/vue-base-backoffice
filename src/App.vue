@@ -2,6 +2,7 @@
 
 import TheHeader from "@/layout/TheMenu.vue";
 import TheMain from "@/layout/TheMain.vue";
+import TheFooter from "@/layout/TheFooter.vue";
 
 </script>
 
@@ -9,6 +10,7 @@ import TheMain from "@/layout/TheMain.vue";
   <v-app>
     <TheHeader />
     <TheMain />
+    <TheFooter/>
   </v-app>
 </template>
 

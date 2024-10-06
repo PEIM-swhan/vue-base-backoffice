@@ -1,31 +1,29 @@
 <script setup>
 import {useDisplay, useTheme} from 'vuetify'
 import {reactive, ref} from "vue";
-import {RouterLink} from "vue-router";
 
 /** 테마 동적 변경 (다크모드, 라이트모드 지원) **/
 const theme = useTheme()
-
 function toggleTheme() {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
 }
 
 // vuetify - width < 600px 이하 인 경우를 판단하기 위한 값
-const isMobile = useDisplay().sm;
+const isMobile = useDisplay().smAndDown;
 
 // 사이드 메뉴 열고 닫는 반응성 변수
 const drawer = ref(true);
 
-const batchMenu = reactive([{"id": "1", "title": "스케줄링 목록", "path": "schedule", "active": "true"},
-  {"id": "2", "title": "배치 등록 및 수정", "path": "batches", "active": "true"},
-  {"id": "3", "title": "배치 로그", "path": "batch-log", "active": "false"}
+const batchMenu = reactive([{"id": "1", "title": "스케줄링 목록", "path": "schedule"},
+  {"id": "2", "title": "배치 등록 및 수정", "path": "batches"},
+  {"id": "3", "title": "배치 로그", "path": "batch-log"}
 ]);
 const utilMenu = reactive([{"id": "1", "title": "최후의 순간", "path": "last-moment"},
   {"id": "2", "title": "프로퍼티 리로드", "path": "property-reload"},
   {"id": "3", "title": "프로퍼티 정보 조회", "path": "properties"},
   {"id": "4", "title": "배포 버전 조회", "path": "commit-ids"}
 ]);
-const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "frame"},
+const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "/ad-test/frame"},
   {"id": "2", "title": "프레임 X", "path": "non-frame"},
 ]);
 
@@ -40,7 +38,7 @@ const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "frame"
   >
     <template v-slot:prepend>
       <v-app-bar-nav-icon v-if="isMobile" @click.stop="drawer=!drawer"/>
-      <v-app-bar-nav-icon readonly icon="mdi-home" v-if="!isMobile"/>
+      <v-app-bar-nav-icon readonly icon="mdi-home" v-if="!isMobile" />
     </template>
 
     <v-app-bar-title text="MobWorks" class="text-h5 font-weight-bold text-green-accent-4"/>
@@ -88,7 +86,7 @@ const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "frame"
         </template>
 
         <v-list-item
-            active-color="green-accent-4"
+            color="green-accent-4"
             link
             v-for="a in adTestMenu"
             :key="a.id"
