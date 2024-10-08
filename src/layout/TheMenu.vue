@@ -23,8 +23,8 @@ const utilMenu = reactive([{"id": "1", "title": "최후의 순간", "path": "las
   {"id": "3", "title": "프로퍼티 정보 조회", "path": "properties"},
   {"id": "4", "title": "배포 버전 조회", "path": "commit-ids"}
 ]);
-const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "/ad-test/frame"},
-  {"id": "2", "title": "프레임 X", "path": "non-frame"},
+const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "/adtest/frame"},
+  {"id": "2", "title": "프레임 X", "path": "/adtest/non-frame"},
 ]);
 
 </script>
@@ -109,7 +109,7 @@ const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "/ad-te
         </template>
 
         <v-list-item
-            active-color="green-accent-4"
+            color="green-accent-4"
             link
             v-for="b in batchMenu"
             :key="b.id"
@@ -132,7 +132,7 @@ const adTestMenu = reactive([{"id": "1", "title": "프레임 O", "path": "/ad-te
           </template>
 
           <v-list-item
-              active-color="green-accent-4"
+              color="green-accent-4"
               link
               v-for="u in utilMenu"
               :key="u.id"

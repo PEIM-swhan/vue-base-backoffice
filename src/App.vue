@@ -1,6 +1,6 @@
 <script setup>
 
-import TheHeader from "@/layout/TheMenu.vue";
+import TheMenu from "@/layout/TheMenu.vue";
 import TheMain from "@/layout/TheMain.vue";
 import TheFooter from "@/layout/TheFooter.vue";
 
@@ -8,7 +8,7 @@ import TheFooter from "@/layout/TheFooter.vue";
 
 <template>
   <v-app>
-    <TheHeader />
+    <TheMenu />
     <TheMain />
     <TheFooter/>
   </v-app>
